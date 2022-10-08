@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
-import { nanoid } from 'nanoid';
+// import { nanoid } from 'nanoid';
 import { ContactForm } from './ContactForm/ContactForm';
 import { ContactList } from './ContactList/ContactList';
+import { Section } from './Section/Section';
+import { Title} from './App.styled';
+import { Filter } from './Filter/Filter';
 
 
 export class App extends Component{
@@ -10,7 +13,7 @@ export class App extends Component{
     filter: ''
   }
 
-  onAddingToPhonebook(newContact) => {
+  onAddingToPhonebook = (newContact) => {
   const { name } = newContact;
   const { contacts } = this.state;
   const contactName = contacts.map(contact => contact.name);
@@ -42,24 +45,25 @@ export class App extends Component{
   searchContact = e => {
     this.setState({filter: e.target.value});
 }
-onFilterContacts()=> {
+onFilterContacts = () => {
   const { contacts, filter } = this.state;
     const normalizedFilter = filter.toLowerCase();
     return contacts.filter(contact =>
     contact.name.toLowerCase().includes(normalizedFilter),
     );
   }
-  render()=> {
+  render= () => {
   const { filter } = this.state;
-  return
+    return (
   <Section>
     <h1>Phonebook</h1>
     <ContactForm onSubmit={this.onAddingToPhonebook}>
     </ContactForm>
     <Title>Contacts</Title>
-    <FilterContactList query={filter} onChange={this.searchContact} />
+    <Filter query={filter} onChange={this.searchContact} />
     <ContactList contacts={this.onFilterContacts()} onDeleteContact={this.deleteContact}></ContactList>
-  </Section>
+  </Section>)
+  
   
   }
 };
