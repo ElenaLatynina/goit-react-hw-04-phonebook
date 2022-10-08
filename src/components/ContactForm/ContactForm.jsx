@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
 import {ErrorMessage, Formik} from 'formik';
 import * as yup from 'yup';
+import { Wrapper, NameLable, SubmitForm, Input, Error } from './ContactForm.styled';
 
 
 export class ContactForm extends Component{
@@ -53,7 +54,7 @@ export class ContactForm extends Component{
                     id={NumberInputId}
                 />
                     <ErrorMessage name="number" render={msg => <Error>{`Please, enter Number`}</Error>}/>
-                    <SubitForm type="submit" name="Add contact">Add contact</SubitForm>
+                    <SubmitForm type="submit" name="Add contact">Add contact</SubmitForm>
             </Wrapper>
             </Formik>
         </div>

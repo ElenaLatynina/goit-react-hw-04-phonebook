@@ -29,7 +29,7 @@ border: none;
 border-radius: 3px;
 `;
 
-export const SubitForm = styled.button`
+export const SubmitForm = styled.button`
 margin-top: 10px;
 margin-left: auto;
 padding: 4px;
