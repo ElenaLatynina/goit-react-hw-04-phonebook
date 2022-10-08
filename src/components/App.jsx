@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 // import { nanoid } from 'nanoid';
 import { ContactForm } from './ContactForm/ContactForm';
 import { ContactList } from './ContactList/ContactList';
-import { Section } from './Section/Section';
-import { Title} from './App.styled';
+import { Title, Container} from './App.styled';
 import { Filter } from './Filter/Filter';
 
 
@@ -55,14 +54,14 @@ onFilterContacts = () => {
   render= () => {
   const { filter } = this.state;
     return (
-  <Section>
+  <Container>
     <h1>Phonebook</h1>
     <ContactForm onSubmit={this.onAddingToPhonebook}>
     </ContactForm>
     <Title>Contacts</Title>
     <Filter query={filter} onChange={this.searchContact} />
     <ContactList contacts={this.onFilterContacts()} onDeleteContact={this.deleteContact}></ContactList>
-  </Section>)
+  </Container>)
   
   
   }
