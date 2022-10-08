@@ -22,10 +22,10 @@ padding: 0;
 export const Delete = styled.button`
 padding: 4px;
 margin: 0;
-width: 65px;
+width: 64px;
 font-size: 9px;
 border-radius: 15px;
-border-color: #1E90FF;
-background-color: #1E90FF;
-color: #FFF8DC;
+border-color: blue;
+background-color: blue;
+color: white;
 `
