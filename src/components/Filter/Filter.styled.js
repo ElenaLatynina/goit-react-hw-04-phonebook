@@ -5,6 +5,7 @@ display: flex;
 flex-direction: column;
 margin: 8px 0;
 padding: 8px;
+/* list-style-type:disc; */
 `;
 
 export const NameInput = styled.input`
