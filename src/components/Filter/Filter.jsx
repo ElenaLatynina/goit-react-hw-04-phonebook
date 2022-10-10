@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-// import { nanoid } from 'nanoid';
 import { NameInput, NameLable, ContactBook } from './Filter.styled';
 
 export const Filter=({ value, onSearch }) => {
