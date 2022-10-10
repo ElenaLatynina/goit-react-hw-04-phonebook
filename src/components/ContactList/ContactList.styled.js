@@ -22,6 +22,7 @@ padding: 0;
 export const Delete = styled.button`
 padding: 4px;
 margin: 0;
+margin-left: auto;
 width: 64px;
 font-size: 9px;
 border-radius: 15px;
