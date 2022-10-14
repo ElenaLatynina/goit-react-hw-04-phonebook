@@ -68,6 +68,6 @@ ContactForm.propTypes = {
     NumberInputId: PropTypes.func,
 }
 
-// export default ContactForm;
+export default ContactForm;
 
 

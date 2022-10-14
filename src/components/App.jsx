@@ -39,7 +39,7 @@ export class App extends Component{
     this.setState({ filter: searchName });
   };
 
-  deleteContact = contactId => {
+  deleteContact = contactId=> {
     this.setState(prevState => ({
       contacts: prevState.contacts.filter(contact => contact.id !== contactId),
     }));
@@ -58,7 +58,7 @@ export class App extends Component{
     </ContactForm>
     <Title>Contacts</Title>
     <Filter value={this.state.filter} onSearch={this.findContact} />
-    <ContactList contacts={visibleContacts} onDelete={this.deleteContact} />
+    <ContactList contacts={visibleContacts} deleteContact={this.deleteContact} />
   </Container>)
   
   
