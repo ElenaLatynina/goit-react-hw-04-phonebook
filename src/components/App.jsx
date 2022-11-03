@@ -6,7 +6,7 @@ import { ContactList } from './ContactList/ContactList';
 import { Title, Container} from './App.styled';
 import { Filter } from './Filter/Filter';
 
-const App = () => {
+export const App = () => {
   const [contacts, setContacts] = useState(() => JSON.parse(window.localStorage.getItem('contacts')) ? JSON.parse(window.localStorage.getItem('contacts')) : []);
   const [filter, setFilter] = useState('');
 
@@ -24,8 +24,8 @@ const App = () => {
       number,
     };
 
-    setContacts(prevStat =>
-      [newContact, ...prevStat.contacts]
+    setContacts(contacts =>
+      [newContact, ...contacts]
     );
   };
   
