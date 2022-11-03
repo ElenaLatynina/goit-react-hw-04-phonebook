@@ -1,38 +1,32 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+// import PropTypes from 'prop-types';
+// import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
 import {ErrorMessage, Formik} from 'formik';
 import * as yup from 'yup';
 import { Wrapper, NameLable, SubmitForm, Input, Error } from './ContactForm.styled';
 
-
-export class ContactForm extends Component{
-    initialValues = {
+const initialValues=  {
         name: '',
         number: ''
-    };
+};
+    
+const schema = yup.object().shape({
+    name: yup.string().required(),
+    number: yup.string().required(),
+});
 
-    NameInputId = nanoid();
-    NumberInputId = nanoid();
-    schema = yup.object().shape({
-        name: yup.string().required(),
-        number: yup.string().required(),
-    })
+const NameInputId = nanoid();
+const NumberInputId = nanoid();
 
-    state = this.initialValues;
-
-     handleSubmit = (values, { resetForm }) => {
-        this.props.onSubmit(values);
+const ContactForm = ({ onSubmit }) => {
+    const handleSubmit = (values, { resetForm }) => {
+        onSubmit(values);
         resetForm();
-    }
-
-    render() {
-        const { NameInputId, NumberInputId, handleSubmit, schema } = this;
-
-        return (
+    };
+    return (
         <div>
             <Formik
-                initialValues={this.initialValues}
+                initialValues={initialValues}
                 validationSchema={schema}
                 onSubmit={handleSubmit}>
                 <Wrapper>
@@ -59,14 +53,17 @@ export class ContactForm extends Component{
             </Formik>
         </div>
         );
-    }
 }
 
-ContactForm.propTypes = {
-    handleSubmit: PropTypes.func,
-    NameInputId: PropTypes.func,
-    NumberInputId: PropTypes.func,
-}
+
+     
+
+
+// ContactForm.propTypes = {
+//     handleSubmit: PropTypes.func,
+//     NameInputId: PropTypes.func,
+//     NumberInputId: PropTypes.func,
+// }
 
 export default ContactForm;
 
