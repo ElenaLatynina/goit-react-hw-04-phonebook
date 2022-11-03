@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ElenaLatynina/goit-react-hw-04-phonebook.git/static/css/main.7acaea2f.css",
+    "main.js": "/ElenaLatynina/goit-react-hw-04-phonebook.git/static/js/main.2f922456.js",
+    "index.html": "/ElenaLatynina/goit-react-hw-04-phonebook.git/index.html",
+    "main.7acaea2f.css.map": "/ElenaLatynina/goit-react-hw-04-phonebook.git/static/css/main.7acaea2f.css.map",
+    "main.2f922456.js.map": "/ElenaLatynina/goit-react-hw-04-phonebook.git/static/js/main.2f922456.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.2f922456.js"
+  ]
+}
