@@ -11,25 +11,44 @@ export const App = () => {
   (JSON.parse(window.localStorage.getItem('contacts')) || []));
   const [filter, setFilter] = useState('');
 
-  useEffect(() => { window.localStorage.setItem('contacts', JSON.stringify(contacts)); }, [contacts]);
+  useEffect(() => {
+    window.localStorage.setItem('contacts',
+      JSON.stringify(contacts));
+  }, [contacts]);
 
   const addContact = ({ name, number }) => {
-    if (contacts.find(contact => contact.name === name)) {
-      alert(`${name} is already in contacts`);
-      return;
-    };
-
     const newContact = {
       id: nanoid(),
       name,
       number,
     };
 
-    setContacts(contacts =>
-      [newContact, ...contacts]
-    );
+    const oldContact = contacts.find(contact => contact.name === name);
+    oldContact ? alert(`This name  is already in contacts`) :
+      setContacts(contacts => [newContact, ...contacts]);
+      
+    // const addContact = ({ name, number }) => {
+    //   // const oldContact = contacts.find(contact => contact.name === name);
+    //   // oldContact ? alert(`This name  is already in contacts`): setContacts(contacts =>
+    //   //   [newContact, ...contacts]
+    //   // );
+
+    //   if (contacts.find(contact => contact.name === name)) {
+    //     alert(`${name} is already in contacts`);
+    //     return;
+    //   };
+
+    //   const newContact = {
+    //     id: nanoid(),
+    //     name,
+    //     number,
+    //   };
+
+    //   setContacts(contacts =>
+    //     [newContact, ...contacts]
+    //   );
+    // };
   };
-  
 
   const findContact = searchName => {
     setFilter(searchName);
@@ -53,7 +72,8 @@ export const App = () => {
       </ContactForm>
       <Title>Contacts</Title>
       <Filter value={filter} onSearch={findContact} />
-      <ContactList contacts={visibleContacts} deleteContact={deleteContact} />
+      <ContactList contacts={visibleContacts}
+        deleteContact={deleteContact} />
     </Container>);
 
 };
