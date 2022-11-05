@@ -1,4 +1,3 @@
-// import React, { Component } from 'react';
 import { useEffect, useState } from 'react';
 import { nanoid } from 'nanoid';
 import { ContactForm } from './ContactForm/ContactForm';
@@ -24,30 +23,9 @@ export const App = () => {
     };
 
     const oldContact = contacts.find(contact => contact.name === name);
-    oldContact ? alert(`This name is already in contacts`) :
+    oldContact ? alert(`${name } is already in contacts`) :
       setContacts(contacts => [newContact, ...contacts]);
-      
-    // const addContact = ({ name, number }) => {
-    //   // const oldContact = contacts.find(contact => contact.name === name);
-    //   // oldContact ? alert(`This name  is already in contacts`): setContacts(contacts =>
-    //   //   [newContact, ...contacts]
-    //   // );
-
-    //   if (contacts.find(contact => contact.name === name)) {
-    //     alert(`${name} is already in contacts`);
-    //     return;
-    //   };
-
-    //   const newContact = {
-    //     id: nanoid(),
-    //     name,
-    //     number,
-    //   };
-
-    //   setContacts(contacts =>
-    //     [newContact, ...contacts]
-    //   );
-    // };
+   
   };
 
   const findContact = searchName => {

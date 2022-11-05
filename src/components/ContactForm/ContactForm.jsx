@@ -1,5 +1,3 @@
-// import PropTypes from 'prop-types';
-// import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
 import {ErrorMessage, Formik} from 'formik';
 import * as yup from 'yup';
