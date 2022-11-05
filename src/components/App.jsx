@@ -24,7 +24,7 @@ export const App = () => {
     };
 
     const oldContact = contacts.find(contact => contact.name === name);
-    oldContact ? alert(`This name  is already in contacts`) :
+    oldContact ? alert(`This name is already in contacts`) :
       setContacts(contacts => [newContact, ...contacts]);
       
     // const addContact = ({ name, number }) => {
