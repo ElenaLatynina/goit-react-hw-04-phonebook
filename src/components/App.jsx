@@ -7,7 +7,8 @@ import { Title, Container} from './App.styled';
 import { Filter } from './Filter/Filter';
 
 export const App = () => {
-  const [contacts, setContacts] = useState(() => JSON.parse(window.localStorage.getItem('contacts')) ? JSON.parse(window.localStorage.getItem('contacts')) : []);
+  const [contacts, setContacts] = useState(() =>
+  (JSON.parse(window.localStorage.getItem('contacts')) || []));
   const [filter, setFilter] = useState('');
 
   useEffect(() => { window.localStorage.setItem('contacts', JSON.stringify(contacts)); }, [contacts]);
